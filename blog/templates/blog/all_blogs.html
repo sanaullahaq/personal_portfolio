@@ -1,0 +1,33 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+
+    <h3 class="text-center mb-5">Sanaulla has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+
+    {# {{ blogs.count|pluralize }} piece of code will add a extra 's' #}
+    {# with the word 'blog' if the value of 'blogs.count' is greater than 1 or =0 but not 1 #}
+
+    {% for blog in blogs %}
+        <div class="row justify-content-center my-3">
+            <div class="col-md-10">
+                <a href="{% url 'blog:detail' blog.id %}" target="_blank"><h2> {{ blog.title }} </h2></a>
+
+                {#    as we have mention the app_name in 'blog/urls.py' that's why we have #}
+                {# mentioned here 'blog:detail' it means detail page of blog app #}
+
+                <h5 class="text-muted"> {{ blog.date|date:'M d Y'|upper }} </h5>
+                {#<h5> {{blog.date}} </h5>#}
+                {# check out the documentation for date formation #}
+                {# https://docs.djangoproject.com/en/3.0/ref/templates/builtins/ #}
+                <h4> {{ blog.text|striptags|truncatechars:150 }} </h4>
+
+                {# here if we have applied html tags in our text area of blog this 'striptags' will hide the tags #}
+                {# when are printing first 25words from the text field cause we want that the html tags should be applied when are printing the whole text are #}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
