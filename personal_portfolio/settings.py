@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hwm7s2my*+ly%b!90p$9hnrrred2xifp9p!6j=+&+a*o_np8_8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['info-sanaulla.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['info-sanaulla.herokuapp.com']
 
 # Application definition
 
@@ -127,3 +127,13 @@ db admin panel
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # the place where we will save our all media files in the project
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+'''this piece of try except block will apply the settings from the local_settings.py file
+when we will develop our site locally, for example we want DEBUG=True when we are developing the site locally 
+but in production we want DEBUG=False'''
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file. You might be on production")
+
