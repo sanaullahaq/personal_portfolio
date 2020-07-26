@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hwm7s2my*+ly%b!90p$9hnrrred2xifp9p!6j=+&+a*o_np8_8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['info-sanaulla.herokuapp.com', '127.0.0.1']
 
@@ -115,7 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 MEDIA_URL = '/coolpicutres/'
 
@@ -126,3 +126,4 @@ db admin panel
 '''
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # the place where we will save our all media files in the project
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
