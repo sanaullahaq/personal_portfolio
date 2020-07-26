@@ -115,12 +115,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/mediafiles/'
 
 '''
-this like ourwebsitename/coolpictures/..... 
+this like ourwebsitename/mediafiles/..... 
 and then it will display our picture from the
 db admin panel
 '''
