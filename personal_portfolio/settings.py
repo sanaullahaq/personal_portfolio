@@ -117,7 +117,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/coolpicutres/'
+MEDIA_URL = '/media/'
 
 '''
 this like ourwebsitename/coolpictures/..... 
@@ -126,4 +126,4 @@ db admin panel
 '''
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # the place where we will save our all media files in the project
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
